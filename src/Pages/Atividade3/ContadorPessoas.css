@@ -1,0 +1,51 @@
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grupo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.icone {
+  width: 50px;
+  height: 50px;
+}
+
+.grupo p {
+  flex-grow: 1;
+  margin-left: 20px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.botoes button {
+  font-size: 20px;
+  padding: 5px 15px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.botoes button:hover {
+  background-color: #1565c0;
+}

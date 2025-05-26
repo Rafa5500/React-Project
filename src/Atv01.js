@@ -1,4 +1,4 @@
-import { Relogio } from './Components/Relogio';
+import { Relogio } from './Pages/Atividade1/Relogio';
 import { Link } from 'react-router-dom';
 
 export default function Atv01() {

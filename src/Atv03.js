@@ -1,23 +1,13 @@
-import { Link } from "react-router-dom";
-import Gallery from "./Gallery";
-import ToDoList from "./ToDoList";
-import PackingList from "./PackingList";
-import PeopleList from "./PeopleList";
-import Recipe from "./Recipe";
-import TeaSet from "./TeaSet";
-
+import ContadorPessoas from './Pages/Atividade3/ContadorPessoas';
+import { Link } from 'react-router-dom';
 
 export default function Atv03() {
-    return (
-        <div className="atv03">
-            <h1 className="atv03-title">Semana 3</h1>
-            <Gallery/>
-            <ToDoList/>
-            <PackingList/>
-            <PeopleList/>
-            <Recipe/>
-            <TeaSet/>
-            <Link to='/' className="atv03-back-btn">Voltar</Link>
-        </div>
-    );
+  return (
+    <>
+      <h1>Atividade</h1>
+      <ContadorPessoas />
+      <br />
+      <Link to="/">retornar à página inicial</Link>
+    </>
+  );
 }

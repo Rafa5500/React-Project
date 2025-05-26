@@ -1,4 +1,4 @@
-import { Letreiro } from './Components/Letreiro';
+import { Letreiro } from './Pages/Atividade2/Letreiro';
 import { Link } from 'react-router-dom';
 
 export default function Atv02() {
