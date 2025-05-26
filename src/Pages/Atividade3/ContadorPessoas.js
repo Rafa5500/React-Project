@@ -19,7 +19,7 @@ export default function ContadorPessoas() {
     <div style={{ textAlign: 'center', padding: 20 }}>
       <PainelTotal total={homens + mulheres} />
 
-      <div className="contadores" /*style={{ display: 'flex', justifyContent: 'center' }}*/>
+      <div className="contadores">
         <PessoaContador
           titulo="Homens"
           quantidade={homens}

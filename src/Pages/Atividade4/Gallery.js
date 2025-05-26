@@ -21,7 +21,7 @@ export default function Gallery() {
         <div className="card">
           <Profile
             name="Finn"
-            imageFile="finn.png"
+            imageFile="/imagens/finn.png"
             power="Coragem e Espada"
             universe="Hora de Aventura"
             size={120}

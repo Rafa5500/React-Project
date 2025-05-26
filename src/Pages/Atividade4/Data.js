@@ -4,7 +4,7 @@ export const people = [
     name: "Finn Mertens",
     profession: "Aventureiro",
     accomplishment: "salvar o Reino Doce e proteger os inocentes!",
-    imageFile: "finn.png"
+    imageFile: "/imagens/finn.png"
   },
   {
     id: 1,
