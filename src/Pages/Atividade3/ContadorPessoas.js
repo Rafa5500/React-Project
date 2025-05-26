@@ -3,7 +3,8 @@ import PessoaContador from './PessoaContador';
 import PainelTotal from './PainelTotal';
 import { Link } from 'react-router-dom';
 import './ContadorPessoas.css';
-
+import imgHomem from './homem.png';
+import imgMulher from './mulher.png';
 
 export default function ContadorPessoas() {
   const [homens, setHomens] = useState(0);
@@ -18,14 +19,14 @@ export default function ContadorPessoas() {
     <div style={{ textAlign: 'center', padding: 20 }}>
       <PainelTotal total={homens + mulheres} />
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className="contadores" /*style={{ display: 'flex', justifyContent: 'center' }}*/>
         <PessoaContador
           titulo="Homens"
           quantidade={homens}
           incrementar={() => setHomens(homens + 1)}
           decrementar={() => setHomens(Math.max(homens - 1, 0))}
           resetar={() => setHomens(0)}
-          imagem="/imagens/homem.png"
+          imagem={imgHomem}
         />
 
         <PessoaContador
@@ -34,7 +35,7 @@ export default function ContadorPessoas() {
           incrementar={() => setMulheres(mulheres + 1)}
           decrementar={() => setMulheres(Math.max(mulheres - 1, 0))}
           resetar={() => setMulheres(0)}
-          imagem="/imagens/mulher.jpg"
+          imagem={imgMulher}
         />
       </div>
 

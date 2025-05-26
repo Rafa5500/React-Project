@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ContadorPessoas.css';
 
-function ContadorPessoas() {
-  const [contador, setContador] = useState(0);
-
+export default function PessoaContador({ titulo, quantidade, incrementar, decrementar, resetar, imagem }) {
   return (
     <div className="container">
-      <div className="titulo">Contador de Pessoas</div>
-      <div className="contador">{contador}</div>
+      <h3 className="titulo">{titulo}</h3>
+      <img className="icone" src={imagem} alt={titulo} />
+      <div className="contador">{quantidade}</div>
       <div className="botoes">
-        <button onClick={() => setContador(contador + 1)}>+</button>
-        <button onClick={() => setContador(contador - 1)}>-</button>
+        <button onClick={incrementar}>+</button>
+        <button onClick={decrementar}>-</button>
+        <button onClick={resetar}>Reset</button>
       </div>
     </div>
   );
 }
-
-export default ContadorPessoas;

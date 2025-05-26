@@ -9,6 +9,7 @@ export default function Avatar({ person, size }) {
             alt={person.name}
             width={size}
             height={size}
+            
         />
     );
 }

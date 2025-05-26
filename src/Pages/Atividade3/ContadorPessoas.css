@@ -49,3 +49,15 @@
 .botoes button:hover {
   background-color: #1565c0;
 }
+
+.container-contador {
+  text-align: center;
+  padding: 20px;
+}
+
+.contadores {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
