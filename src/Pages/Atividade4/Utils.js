@@ -1,3 +1,3 @@
 export function getImageUrl(person) {
-    return `/${person.imageFile}`;
+    return `/imagens/${person.image}`;
 }
