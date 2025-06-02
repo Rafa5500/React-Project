@@ -1,26 +1,34 @@
-// Atividade 5/src/Pages/List4.jsx
 import React, { useState } from 'react';
-import { initialList as artworksInitialList } from './data'; // Renomeando para evitar conflito se 'initialList' for usado para artistas. Ajuste o caminho.
+
+const initialList = [
+  { id: 0, name: 'Leonardo da Vinci' },
+  { id: 1, name: 'Vincent van Gogh' },
+  { id: 2, name: 'Frida Kahlo' },
+];
 
 export default function List4() {
-  const [list, setList] = useState(artworksInitialList); // [cite: 443]
+  const [artists, setArtists] = useState(initialList);
 
-  function handleClick() {
-    const nextList = [...list]; // [cite: 443]
-    nextList.reverse(); // [cite: 443]
-    setList(nextList); // [cite: 443]
+  function handleRemove(id) {
+    setArtists(artists.filter(artist => artist.id !== id));
   }
 
   return (
-    <>
-      <button onClick={handleClick}>
-        Reverse
-      </button> {/* [cite: 444] */}
-      <ul>
-        {list.map(artwork => (
-          <li key={artwork.id}>{artwork.title}</li>
-        ))} {/* [cite: 444] */}
+    <div style={{ textAlign: 'center', margin: '30px auto' }}>
+      <h3>Remover Artista</h3>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {artists.map(artist => (
+          <li key={artist.id}>
+            {artist.name}
+            <button
+              onClick={() => handleRemove(artist.id)}
+              style={{ marginLeft: 10 }}
+            >
+              Remover
+            </button>
+          </li>
+        ))}
       </ul>
-    </>
+    </div>
   );
 }

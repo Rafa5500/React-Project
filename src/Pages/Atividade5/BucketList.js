@@ -1,68 +1,39 @@
-// Atividade 5/src/Pages/BucketList.jsx
 import React, { useState } from 'react';
-import { initialList as artworksInitialList } from './data';
 
-function ItemList({ artworks, onToggle }) {
-  return (
-    <ul>
-      {artworks.map(artwork => (
-        <li key={artwork.id}>
-          <label>
-            <input
-              type="checkbox"
-              checked={artwork.seen}
-              onChange={e => {
-                onToggle(
-                  artwork.id,
-                  e.target.checked
-                );
-              }}
-            />
-            {artwork.title}
-          </label>
-        </li>
-      ))} {/* [cite: 453] */}
-    </ul>
-  );
-}
+const initialItems = [
+  { id: 0, title: 'Visitar o Japão', picked: false },
+  { id: 1, title: 'Aprender violão', picked: false },
+  { id: 2, title: 'Fazer paraquedismo', picked: true },
+];
 
 export default function BucketList() {
-  const [myList, setMyList] = useState(artworksInitialList);
-  // Para ter listas verdadeiramente independentes, copiamos o array inicial
-  const [yourList, setYourList] = useState([...artworksInitialList].map(item => ({...item}))); // Deep copy for separate state [cite: 449, 450] (modified for true independence)
+  const [items, setItems] = useState(initialItems);
 
-
-  function handleToggleMyList(artworkId, nextSeen) {
-    setMyList(myList.map(artwork => {
-      if (artwork.id === artworkId) {
-        return { ...artwork, seen: nextSeen }; // [cite: 459]
-      } else {
-        return artwork; // [cite: 459]
-      }
-    }));
-  }
-
-  function handleToggleYourList(artworkId, nextSeen) {
-    setYourList(yourList.map(artwork => {
-      if (artwork.id === artworkId) {
-        return { ...artwork, seen: nextSeen }; // [cite: 459]
-      } else {
-        return artwork; // [cite: 459]
-      }
-    }));
+  function handleToggle(id) {
+    setItems(items.map(item =>
+      item.id === id
+        ? { ...item, picked: !item.picked }
+        : item
+    ));
   }
 
   return (
-    <>
-      <h1>Art Bucket List</h1>
-      <h2>My list of art to see: </h2>
-      <ItemList
-        artworks={myList}
-        onToggle={handleToggleMyList} /> {/* [cite: 452] */}
-      <h2>Your list of art to see: </h2>
-      <ItemList
-        artworks={yourList}
-        onToggle={handleToggleYourList} /> {/* [cite: 452] */}
-    </>
+    <div style={{ textAlign: 'center', margin: '30px auto' }}>
+      <h3>Minha Lista de Desejos</h3>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {items.map(item => (
+          <li key={item.id}>
+            <label style={{ cursor: 'pointer' }}>
+              <input
+                type="checkbox"
+                checked={item.picked}
+                onChange={() => handleToggle(item.id)}
+              />
+              {item.title}
+            </label>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

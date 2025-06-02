@@ -1,46 +1,41 @@
-// Atividade 5/src/Pages/ShapeEditor.jsx
 import React, { useState } from 'react';
-import { initialShapes } from './data'; // Ajuste o caminho se necessário
+
+const initialShapes = [
+  { id: 1, type: 'circle', color: 'red' },
+  { id: 2, type: 'square', color: 'blue' },
+  { id: 3, type: 'triangle', color: 'green' },
+];
 
 export default function ShapeEditor() {
-  const [shapes, setShapes] = useState(
-    initialShapes
-  ); // [cite: 423]
+  const [shapes, setShapes] = useState(initialShapes);
 
-  function handleClick() {
-    const nextShapes = shapes.map(shape => {
-      if (shape.type === 'square') {
-        return shape; // [cite: 424]
-      } else {
-        return {
-          ...shape,
-          y: shape.y + 50,
-        }; // [cite: 424]
-      }
-    });
-    setShapes(nextShapes); // [cite: 425]
+  function handleClick(id) {
+    setShapes(shapes.map(shape =>
+      shape.id === id
+        ? { ...shape, color: 'orange' }
+        : shape
+    ));
   }
 
   return (
-    <>
-      <button onClick={handleClick}>
-        Move circles down!
-      </button> {/* [cite: 426] */}
-      {shapes.map(shape => (
-        <div
-          key={shape.id}
-          style={{
-            background: 'purple',
-            position: 'absolute',
-            left: shape.x,
-            top: shape.y,
-            borderRadius:
-              shape.type === 'circle'
-                ? '50%' : '',
-            width: 20,
-            height: 20,
-          }} /> // [cite: 426]
-      ))}
-    </>
+    <div style={{ textAlign: 'center', margin: '30px auto' }}>
+      <h3>Editor de Formas</h3>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {shapes.map(shape => (
+          <li key={shape.id}>
+            <span>{shape.type}</span> — 
+            <span style={{ color: shape.color, fontWeight: 'bold', marginLeft: 5 }}>
+              {shape.color}
+            </span>
+            <button
+              style={{ marginLeft: 10 }}
+              onClick={() => handleClick(shape.id)}
+            >
+              Pintar de laranja
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

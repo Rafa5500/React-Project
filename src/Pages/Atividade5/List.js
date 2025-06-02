@@ -1,31 +1,22 @@
-// Atividade 5/src/Pages/List.jsx
-import React, { useState } from 'react';
+import React from 'react';
 
-let nextId = 0;
+const people = [
+  { id: 1, name: 'Ada Lovelace', profession: 'Matemática' },
+  { id: 2, name: 'Grace Hopper', profession: 'Cientista da Computação' },
+  { id: 3, name: 'Margaret Hamilton', profession: 'Engenheira de Software' },
+];
 
 export default function List() {
-  const [name, setName] = useState(''); // [cite: 407]
-  const [artists, setArtists] = useState([]); // [cite: 407]
-
   return (
-    <>
-      <h1>Inspiring sculptors:</h1>
-      <input
-        value={name}
-        onChange={e => setName(e.target.value)}
-      /> {/* [cite: 408] */}
-      <button onClick={() => {
-        setArtists([
-          ...artists,
-          { id: nextId++, name: name }
-        ]); // [cite: 410]
-        setName(''); // Clear input after adding
-      }}>Add</button> {/* [cite: 408, 411] */}
-      <ul>
-        {artists.map(artist => (
-          <li key={artist.id}>{artist.name}</li>
-        ))} {/* [cite: 408] */}
+    <div style={{ textAlign: 'center', margin: '30px auto' }}>
+      <h3>Lista de Pessoas</h3>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {people.map(person => (
+          <li key={person.id}>
+            {person.name} — <i>{person.profession}</i>
+          </li>
+        ))}
       </ul>
-    </>
+    </div>
   );
 }

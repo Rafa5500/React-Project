@@ -1,41 +1,39 @@
-// Atividade 5/src/Pages/List3.jsx
 import React, { useState } from 'react';
-import { initialArtists } from './data'; // Ajuste o caminho se necessário
 
-let nextId = initialArtists.length; // Start nextId after existing items
+let nextId = 3;
 
 export default function List3() {
-  const [name, setName] = useState(''); // [cite: 435]
-  const [artists, setArtists] = useState(
-    initialArtists // [cite: 435]
-  );
+  const [name, setName] = useState('');
+  const [artists, setArtists] = useState([
+    { id: 0, name: 'Leonardo da Vinci' },
+    { id: 1, name: 'Vincent van Gogh' },
+    { id: 2, name: 'Frida Kahlo' },
+  ]);
 
-  function handleClick() {
-    const insertAt = 1; // Or any other index [cite: 436]
-    const nextArtists = [
-      ...artists.slice(0, insertAt), // [cite: 436]
-      { id: nextId++, name: name }, // [cite: 436]
-      ...artists.slice(insertAt) // [cite: 436]
-    ];
-    setArtists(nextArtists); // [cite: 437]
-    setName(''); // [cite: 437]
+  function handleAddClick() {
+    if (name.trim() === '') return;
+    setArtists([...artists, { id: nextId++, name }]);
+    setName('');
   }
 
   return (
-    <>
-      <h1>Inspiring sculptors:</h1>
+    <div style={{ textAlign: 'center', margin: '30px auto' }}>
+      <h3>Adicionar Artista</h3>
       <input
+        type="text"
+        placeholder="Digite um nome"
         value={name}
         onChange={e => setName(e.target.value)}
-      /> {/* [cite: 437] */}
-      <button onClick={handleClick}>
-        Insert
-      </button> {/* [cite: 437] */}
-      <ul>
+      />
+      <button onClick={handleAddClick} style={{ marginLeft: 10 }}>
+        Adicionar
+      </button>
+
+      <ul style={{ listStyle: 'none', padding: 0 }}>
         {artists.map(artist => (
           <li key={artist.id}>{artist.name}</li>
-        ))} {/* [cite: 437] */}
+        ))}
       </ul>
-    </>
+    </div>
   );
 }

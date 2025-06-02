@@ -12,19 +12,44 @@
 
     export default function Avatar({ person, size }) {
         if (!person) return null;
-        return/* (
+        return (
             <img
                 className="avatar"
                 src={finn}
+                alt={person.name}
+                width={size}
+                height={size}
+
+                className="avatar"
                 src={jake}
+                alt={person.name}
+                width={size}
+                height={size}
+
+                className="avatar"
                 src={bmo}
+                alt={person.name}
+                width={size}
+                height={size}
+
+                className="avatar"
                 src={marceline}
+                alt={person.name}
+                width={size}
+                height={size}
+
+                className="avatar"
                 src={princesa_jujuba}
+                alt={person.name}
+                width={size}
+                height={size}
+
+                className="avatar"
                 src={rei_gelado}
                 alt={person.name}
                 width={size}
                 height={size}
                 
             />
-        );*/
+        );
     }

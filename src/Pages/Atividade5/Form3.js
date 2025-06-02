@@ -1,94 +1,43 @@
-// Atividade 5/src/Pages/Form3.jsx
 import React, { useState } from 'react';
 
 export default function Form3() {
-  const [person, setPerson] = useState({
-    name: 'Niki de Saint Phalle',
-    artwork: {
-      title: 'Blue Nana',
-      city: 'Hamburg',
-      image: 'https://i.imgur.com/SdlAgU0m.jpg',
-    }
-  }); // [cite: 380, 385]
+  const [form, setForm] = useState({
+    firstName: 'Fulano',
+    lastName: 'Silva',
+    email: 'fulano@email.com'
+  });
 
-  function handleNameChange(e) {
-    setPerson({
-      ...person,
-      name: e.target.value
-    }); // [cite: 386]
-  }
-
-  function handleTitleChange(e) {
-    setPerson({
-      ...person,
-      artwork: {
-        ...person.artwork,
-        title: e.target.value
-      }
-    }); // [cite: 386]
-  }
-
-  function handleCityChange(e) {
-    setPerson({
-      ...person,
-      artwork: {
-        ...person.artwork,
-        city: e.target.value
-      }
-    }); // [cite: 386]
-  }
-
-  function handleImageChange(e) {
-    setPerson({
-      ...person,
-      artwork: {
-        ...person.artwork,
-        image: e.target.value
-      }
-    }); // [cite: 387]
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
   }
 
   return (
-    <>
-      <label>
-        Name:
-        <input
-          value={person.name}
-          onChange={handleNameChange}
-        /> {/* [cite: 388] */}
-      </label>
-      <label>
-        Title:
-        <input
-          value={person.artwork.title}
-          onChange={handleTitleChange}
-        /> {/* [cite: 388] */}
-      </label>
-      <label>
-        City:
-        <input
-          value={person.artwork.city}
-          onChange={handleCityChange}
-        /> {/* [cite: 388] */}
-      </label>
-      <label>
-        Image:
-        <input
-          value={person.artwork.image}
-          onChange={handleImageChange}
-        /> {/* [cite: 388] */}
-      </label>
-      <p>
-        <i>{person.artwork.title}</i>
-        {' by '}
-        {person.name}
-        <br />
-        (located in {person.artwork.city})
-      </p> {/* [cite: 388] */}
-      <img
-        src={person.artwork.image}
-        alt={person.artwork.title}
-      /> {/* [cite: 388] */}
-    </>
+    <form style={{ textAlign: 'center', margin: '30px auto' }}>
+      <input
+        name="firstName"
+        value={form.firstName}
+        onChange={handleChange}
+        placeholder="Nome"
+      />
+      <input
+        name="lastName"
+        value={form.lastName}
+        onChange={handleChange}
+        placeholder="Sobrenome"
+        style={{ marginLeft: 10 }}
+      />
+      <input
+        name="email"
+        value={form.email}
+        onChange={handleChange}
+        placeholder="Email"
+        style={{ marginLeft: 10 }}
+      />
+      <p>Nome completo: {form.firstName} {form.lastName}</p>
+      <p>Email: {form.email}</p>
+    </form>
   );
 }

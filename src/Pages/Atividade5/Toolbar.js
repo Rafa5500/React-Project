@@ -1,23 +1,19 @@
-// Atividade 5/src/Pages/Toolbar.jsx
+// components/Toolbar.js
 import React from 'react';
 
-function Button({ onClick, children }) {
-  return (
-    <button onClick={onClick}>
-      {children}
-    </button>
-  ); // [cite: 58]
-}
-
 export default function Toolbar() {
+  function onPlayMovie() {
+    alert('Iniciando filme...');
+  }
+
+  function onUploadImage() {
+    alert('Enviando imagem...');
+  }
+
   return (
-    <div>
-      <Button onClick={() => alert('Playing!')}>
-        Play Movie
-      </Button> {/* [cite: 58] */}
-      <Button onClick={() => alert('Uploading!')}>
-        Upload Image
-      </Button> {/* [cite: 58] */}
+    <div style={{ border: '1px solid gray', padding: '10px' }}>
+      <button onClick={onPlayMovie}>Play Movie</button>
+      <button onClick={onUploadImage}>Upload Image</button>
     </div>
-  ); // [cite: 57, 58]
+  );
 }

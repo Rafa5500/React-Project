@@ -1,31 +1,25 @@
-// Atividade 5/src/Pages/List2.jsx
-import React, { useState } from 'react';
-import { initialArtists } from './data'; // Ajuste o caminho se necessário
+import React from 'react';
+
+const people = [
+  { id: 1, name: 'Ada Lovelace', profession: 'Matemática' },
+  { id: 2, name: 'Grace Hopper', profession: 'Cientista da Computação' },
+  { id: 3, name: 'Margaret Hamilton', profession: 'Engenheira de Software' },
+  { id: 4, name: 'Katherine Johnson', profession: 'Matemática' }
+];
 
 export default function List2() {
-  const [artists, setArtists] = useState(
-    initialArtists
-  ); // [cite: 415]
+  const matematicas = people.filter(p => p.profession === 'Matemática');
 
   return (
-    <>
-      <h1>Inspiring sculptors: </h1>
-      <ul>
-        {artists.map(artist => (
-          <li key={artist.id}>
-            {artist.name}{' '}
-            <button onClick={() => {
-              setArtists(
-                artists.filter(a =>
-                  a.id !== artist.id
-                )
-              ); // [cite: 416]
-            }}>
-              Delete
-            </button>
+    <div style={{ textAlign: 'center', margin: '30px auto' }}>
+      <h3>Somente Matemáticas</h3>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {matematicas.map(person => (
+          <li key={person.id}>
+            {person.name} — <i>{person.profession}</i>
           </li>
-        ))} {/* [cite: 416] */}
+        ))}
       </ul>
-    </>
+    </div>
   );
 }
