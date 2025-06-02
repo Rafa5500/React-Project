@@ -12,7 +12,7 @@
 
     export default function Avatar({ person, size }) {
         if (!person) return null;
-        return (
+        return/* (
             <img
                 className="avatar"
                 src={finn}
@@ -26,5 +26,5 @@
                 height={size}
                 
             />
-        );
+        );*/
     }
