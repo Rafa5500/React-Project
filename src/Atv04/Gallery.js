@@ -20,7 +20,7 @@ export default function Gallery() {
     <div className="atv04-gallery-container">
         <div className="atv04-gallery-header">
         <h2 className="atv04-gallery-h2">
-            <i>{hero.name}</i> é {hero.artist}
+            <i>{hero.name}</i> é interpretado por {hero.artist}
         </h2>
         <h3 className="atv04-gallery-h3">
             ({index + 1} de {heroes.length})
@@ -41,5 +41,5 @@ export default function Gallery() {
 
         {showMore && <p className="atv04-gallery-description">{hero.description}</p>}
     </div>
-    );
+  );
 }

@@ -3,74 +3,49 @@ import './FormQuiz.css';
 
 export default function FormQuiz() {
   const [answer, setAnswer] = useState('');
-  const [error, setError] = useState(null);
   const [status, setStatus] = useState('typing');
 
   if (status === 'success') {
-    return (
-      <div className="quiz-page-container">
-        <h1 className="success-message">Correto!</h1>
-      </div>
-    );
+    return <h2>A resposta está correta! Você conhece Ooo!</h2>;
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus('submitting');
-    try {
-      await submitForm(answer);
+    await delay(1500);
+    if (answer.toLowerCase() === 'reino doce') {
       setStatus('success');
-    } catch (err) {
-      setStatus('typing');
-      setError(err);
+    } else {
+      setStatus('error');
     }
   }
 
-  function handleTextareaChange(e) {
+  function handleChange(e) {
     setAnswer(e.target.value);
   }
 
   return (
-    <div className="quiz-page-container">
-      <div className="quiz-card">
-        <h2>Quiz de Cidade</h2>
-        <p>
-          Em qual cidade há um outdoor que transforma o ar em água potável?
-        </p>
-        <form onSubmit={handleSubmit}>
-          <textarea
-            value={answer}
-            onChange={handleTextareaChange}
-            disabled={status === 'submitting'}
-          />
-          <button
-            disabled={
-              answer.length === 0 ||
-              status === 'submitting'
-            }
-          >
-            Submit
-          </button>
-          {error !== null &&
-            <p className="Error">
-              {error.message}
-            </p>
-          }
-        </form>
-      </div>
-    </div>
+    <>
+      <h2>Quiz: Onde vive a Princesa Jujuba?</h2>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          value={answer}
+          onChange={handleChange}
+          disabled={status === 'submitting'}
+          placeholder="Digite sua resposta aqui"
+        />
+        <br />
+        <button disabled={status === 'submitting'}>
+          Enviar
+        </button>
+        {status === 'error' &&
+          <p className="Error">Resposta incorreta! Tente novamente.</p>
+        }
+      </form>
+    </>
   );
 }
 
-function submitForm(answer) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let shouldError = answer.toLowerCase() !== 'lima';
-      if (shouldError) {
-        reject(new Error('Tente Novamente!'));
-      } else {
-        resolve();
-      }
-    }, 1500); // 1.5 segundos de "rede"
-  });
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

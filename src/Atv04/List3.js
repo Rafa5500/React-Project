@@ -1,12 +1,11 @@
 import { useState } from 'react';
 
-
 let nextId = 3;
 
 const initialHeroes = [
-  { id: 0, name: 'Homem Aranha' },
-  { id: 1, name: 'Capitão América' },
-  { id: 2, name: 'Viúva Negra' },
+  { id: 0, name: 'Jake' },
+  { id: 1, name: 'Rei Gelado' },
+  { id: 2, name: 'Marceline' },
 ];
 
 export default function List3() {
@@ -27,9 +26,9 @@ export default function List3() {
   return (
     <div className="list-page-container">
       <div className="list-card">
-        <h1>Lista de Heróis</h1>
+        <h1>Lista de Personagens de Ooo</h1>
         <input className='list-input'
-          placeholder="Digite o nome do herói"
+          placeholder="Digite o nome do personagem"
           value={name}
           onChange={e => setName(e.target.value)}
         />

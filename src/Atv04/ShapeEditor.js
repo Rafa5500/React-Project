@@ -29,7 +29,7 @@ export default function ShapeEditor() {
   return (
     <div className="page-center-container">
       <div className="shape-editor-card">
-        <h2>Editor de Heróis e Vilões</h2>
+        <h2>Aventureiros e Vilões de Ooo</h2>
         <button onClick={handleClick}>Mover vilões para baixo</button>
         <div className="character-area">
           {characters.map(char => (
@@ -40,9 +40,9 @@ export default function ShapeEditor() {
                 left: char.x,
                 top: char.y,
               }}
-              title={char.type === 'heroi' ? 'Herói' : 'Vilão'}
+              title={char.type === 'heroi' ? 'Aventureiro' : 'Vilão'}
             >
-              {char.type === 'heroi' ? '🦸' : '🦹'}
+              {char.type === 'heroi' ? '🧝' : '🧟'}
             </div>
           ))}
         </div>

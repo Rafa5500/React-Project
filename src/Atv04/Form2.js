@@ -1,12 +1,11 @@
-// Form2.js
 import { useState } from 'react';
-import './Form2.css'; // Importe o arquivo CSS aqui
+import './Form2.css';
 
 export default function Form2() {
   const [hero, setHero] = useState({
-    name: 'Peter Parker',
-    alias: 'Homem-Aranha',
-    power: 'teia orgânica'
+    name: 'Finn Mertens',
+    alias: 'Finn',
+    power: 'Espadas e coragem'
   });
 
   function handleNameChange(e) {
@@ -33,32 +32,30 @@ export default function Form2() {
   return (
     <div className="form-page-container">
       <div className="form-container">
-        <h2>Cadastro de Herói</h2>
+        <h2>Cadastro de Aventureiro</h2>
 
         <label>
           Nome real:
           <input
-            type="text" // Adicione o type="text"
+            type="text"
             value={hero.name}
             onChange={handleNameChange}
           />
         </label>
-        {/* <br /> não é necessário quando usando display: block para labels/inputs */}
 
         <label>
           Codinome:
           <input
-            type="text" // Adicione o type="text"
+            type="text"
             value={hero.alias}
             onChange={handleAliasChange}
           />
         </label>
-        {/* <br /> */}
 
         <label>
-          Poder especial:
+          Habilidade especial:
           <input
-            type="text" // Adicione o type="text"
+            type="text"
             value={hero.power}
             onChange={handlePowerChange}
           />

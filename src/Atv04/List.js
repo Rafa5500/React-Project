@@ -9,7 +9,7 @@ export default function List() {
 
   function handleAddHero() {
     if (name.trim() === '') {
-      alert('Por favor, digite o nome do herói.');
+      alert('Por favor, digite o nome do personagem.');
       return;
     }
 
@@ -28,12 +28,12 @@ export default function List() {
   return (
     <div className="list-page-container">
       <div className="list-card">
-        <h1>Heróis favoritos</h1>
+        <h1>Personagens favoritos de Ooo</h1>
 
         <div>
           <input
             type="text"
-            placeholder="Digite o nome do herói"
+            placeholder="Digite o nome do personagem"
             value={name}
             onChange={e => setName(e.target.value)}
           />

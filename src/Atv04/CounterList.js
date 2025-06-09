@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './Counter.css'; // Importe o arquivo CSS aqui
+import './Counter.css';
 
 let initialVictories = [0, 0, 0];
-let heroNames = ['Thor', 'Viúva Negra', 'Capitão América'];
+let heroNames = ['Finn', 'Jake', 'Princesa Jujuba'];
 
 export default function CounterList() {
   const [victories, setVictories] = useState(initialVictories);
@@ -17,16 +17,14 @@ export default function CounterList() {
   return (
     <div className="counter-page-container">
       <div className="counter-card">
-        <h2>Vitórias dos Heróis</h2>
+        <h2>Vitórias dos Heróis de Ooo</h2>
         <ul>
           {victories.map((count, i) => (
             <li key={i}>
               <span>
                 <strong>{heroNames[i]}</strong>: {count} vitória{count !== 1 ? 's' : ''}
               </span>
-              <button
-                onClick={() => handleVictory(i)}
-              >
+              <button onClick={() => handleVictory(i)}>
                 +1 vitória
               </button>
             </li>

@@ -3,9 +3,9 @@ import { useState } from 'react';
 let nextId = 3;
 
 const initialHeroes = [
-  { id: 0, name: 'Thor' },
-  { id: 1, name: 'Pantera Negra' },
-  { id: 2, name: 'Homem de Ferro' },
+  { id: 0, name: 'BMO' },
+  { id: 1, name: 'Marceline' },
+  { id: 2, name: 'Finn' },
 ];
 
 export default function List4() {
@@ -20,7 +20,7 @@ export default function List4() {
   return (
     <div className="list-page-container">
       <div className="list-card">
-        <h1>Heróis em ordem dinâmica</h1>
+        <h1>Ordem dos Aventureiros</h1>
         <button onClick={handleClick}>
           Inverter ordem
         </button>

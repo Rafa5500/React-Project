@@ -3,11 +3,11 @@ import { useState } from 'react';
 let nextId = 3;
 
 const initialList = [
-  { id: 0, name: 'Thor', seen: false },
-  { id: 1, name: 'Pantera Negra', seen: false },
-  { id: 2, name: 'Homem de Ferro', seen: false },
-  { id: 3, name: 'Viúva Negra', seen: false },
-  { id: 4, name: 'Capitão América', seen: true },
+  { id: 0, name: 'Finn', seen: false },
+  { id: 1, name: 'Jake', seen: false },
+  { id: 2, name: 'Marceline', seen: false },
+  { id: 3, name: 'Princesa Jujuba', seen: false },
+  { id: 4, name: 'Rei Gelado', seen: true },
 ];
 
 export default function BucketList() {
@@ -31,7 +31,7 @@ export default function BucketList() {
   return (
     <div className="list-page-container">
       <div className="list-card">
-        <h1>Lista de Heróis para Conhecer</h1>
+        <h1>Personagens para Conhecer</h1>
 
         <h2>Minha lista:</h2>
         <HeroList

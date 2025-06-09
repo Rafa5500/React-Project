@@ -3,11 +3,11 @@ import './Form2.css';
 
 export default function Form3() {
   const [hero, setHero] = useState({
-    name: 'Peter Parker',
+    name: 'Princesa Jujuba',
     profile: {
-      alias: 'Homem-Aranha',
-      city: 'Nova York',
-      image: 'haranha.jpg'
+      alias: 'Jujuba',
+      city: 'Reino Doce',
+      image: 'jujuba.png'
     }
   });
 
@@ -51,7 +51,7 @@ export default function Form3() {
   return (
     <div className="form-page-container">
       <div className="form-container">
-        <h2>Ficha do Herói</h2>
+        <h2>Ficha de Personagem</h2>
 
         <label>
           Nome verdadeiro:
@@ -72,7 +72,7 @@ export default function Form3() {
         </label>
 
         <label>
-          Base de operações:
+          Reino/base:
           <input
             type="text"
             value={hero.profile.city}
@@ -96,7 +96,6 @@ export default function Form3() {
           <br />
           <small>(base: {hero.profile.city})</small>
         </p>
-
 
         <img
           src={hero.profile.image}
