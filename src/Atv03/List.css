@@ -1,0 +1,88 @@
+.titulo {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: #181d24;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.toDoList {
+  background: #181d24;
+  border-radius: 10px;
+  max-width: 420px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  padding: 2rem 2rem 1.5rem 2rem;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1.2rem;
+}
+
+.tituloh2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #fff;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  color: #d7c44a;
+  margin-top: 0.2rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+ol {
+  margin: 0;
+  padding-left: 1.3rem;
+  list-style: decimal inside;
+}
+
+li {
+  font-size: 1.08rem;
+  margin-bottom: 0.7rem;
+  color: #e5e5e5;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.li2 {
+  font-size: 1.08rem;
+  margin-bottom: 0.7rem;
+  color: #e5e5e5;
+  line-height: 1.5;
+  display: list-item;
+  align-items: center;
+}
+
+.catchphrase {
+  font-style: italic;
+  color: #ffb74d;
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.people-list, .person-item p {
+  color: #fff;
+  opacity: 1;
+}
+
+guest {
+  color: #fff;
+}

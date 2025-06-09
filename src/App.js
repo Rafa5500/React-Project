@@ -1,7 +1,13 @@
-import MinhasRotas from './minhasRotas';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  return <MinhasRotas />;
+  return (
+    <>
+    <h1>Olá sala</h1>
+    <p>Venha estudar na Fatec</p>
+    </>
+  );
 }
 
 export default App;

@@ -1,0 +1,28 @@
+.atv02-container {
+  background: linear-gradient(135deg, #f4f4f4 0%, #f4f4f4 100%);
+  min-height: 100vh;
+  padding: 32px 0 60px 0;
+}
+
+.atv02-title {
+  color: #000000;
+  text-align: center;
+  font-size: 2.3rem;
+
+}
+
+.atv02-back-btn {
+  display: inline-block;
+  background: #96aeaf;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  text-decoration: none;
+  text-align: center;
+}

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+.ticket-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    width: 100vw;
+    font-family: 'Inter', sans-serif;
+}
+
+.ticket-form-card {
+    max-width: 400px;
+    margin: 20px;
+    padding: 30px;
+    background-color: #1a1a1a;
+    color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #E0E0E0;
+    text-align: center;
+}
+
+.ticket-form-card h2 {
+    font-family: 'Inter', sans-serif;
+    color: #ffff;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 2em;
+}
+
+.ticket-form-card label {
+    display: block;
+    text-align: left;
+    margin-bottom: 12px;
+    color: #ffff;
+    font-size: 0.95em;
+    font-weight: 400;
+}
+
+.ticket-form-card input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 10px 12px;
+    margin-top: 5px;
+    border: 1px solid #D0D0D0;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #333333;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.ticket-form-card input[type="text"]:focus {
+    outline: none;
+    border-color: #ffe95a;
+    box-shadow: 0 0 0 3px #eeff344f;
+}
+
+.ticket-form-card p {
+    color: #ffffff;
+    font-size: 1.1em;
+    margin-top: 25px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.ticket-form-card p b {
+    color: #ffe95a; 
+    font-weight: 600;
+}

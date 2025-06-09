@@ -1,20 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Home.css";
 
-const Home = () => {
-  return (
-    <div>
-      <h1>Página Inicial</h1>
-      <nav>
-        <ul>
-          <li><Link to="/semana01">Semana 01</Link></li>
-          <li><Link to="/semana02">Semana 02</Link></li>
-          <li><Link to="/semana03">Semana 03</Link></li>
-          <li><Link to="/semana04">Semana 04</Link></li>
-        </ul>
-      </nav>
-    </div>
-  )
-};
-
+const Home = () =>{
+    return(
+        <div className="home-wrapper">
+            <div className="container">
+                <h1>Página Inicial</h1>
+                <nav>
+                    <ul>
+                        <li><Link to='Atv01'>Semana 1</Link></li>
+                        <li><Link to='Atv02'>Semana 2</Link></li>
+                        <li><Link to='Atv03'>Semana 3</Link></li>
+                        <li><Link to='Atv04'>Semana 4</Link></li>
+                        <li><Link to='Atv05'>Semana 5</Link></li>
+                        <li><Link to='loja'>Loja</Link></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    );
+}
 export default Home;

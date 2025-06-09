@@ -1,0 +1,32 @@
+.atv05 {
+  background: linear-gradient(135deg, #7f8688 0%, #7f8688 100%);
+  min-height: 100vh;
+  padding: 32px 0 60px 0;
+}
+
+.atv05-title {
+  color: #ffe95a;
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 2.2rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px #0008;
+}
+
+.atv05-back-btn {
+  display: inline-block;
+  margin: 32px auto 0 auto;
+  background: #ffe95a;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  text-decoration: none;
+  text-align: center;
+}

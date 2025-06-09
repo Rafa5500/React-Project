@@ -1,0 +1,73 @@
+.form-container {
+  max-width: 250px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #0000001a;
+  font-family: sans-serif;
+}
+
+.form-container label,
+.form-container textarea,
+.form-container select {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  color: #cccccc;
+}
+
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #555555;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.form-container button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #218838;
+}
+
+.form2-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.form-container img {
+  display: block; /* Garante que a imagem se comporte como um bloco */
+  margin: 20px auto 0 auto; /* Centraliza a imagem horizontalmente e adiciona margem superior */
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do card */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+.form-container p {
+  text-align: center; /* Centraliza o texto da descrição */
+  margin-top: 20px; /* Espaço acima da descrição */
+  color: #dddddd; /* Cor para o texto da descrição */
+}
+
+.form-container p i,
+.form-container p small {
+  color: #eeeeee; /* Cores um pouco mais claras para <i> e <small> */
+}

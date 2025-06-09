@@ -1,0 +1,20 @@
+.moving-dot-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  border: 1px solid #4b4a4a;
+  overflow: hidden;
+  background-color: #7f8688;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+.moving-dot {
+  position: absolute;
+  background-color: #ffe95a;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.05s linear;
+  pointer-events: none;
+}
